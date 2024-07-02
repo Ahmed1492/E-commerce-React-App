@@ -1,0 +1,162 @@
+.navbar {
+  background-color: #ff5722;
+
+  padding-bottom: 4px;
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 7px;
+
+    border-bottom: 1px solid #eee8e88f;
+
+    a {
+      color: #fff;
+      padding: 6px 20px;
+      border-left: 1px solid #eee8e88f;
+      border-right: 1px solid #eee8e88f;
+
+
+    }
+
+    .left {
+      ul {
+        display: flex;
+        // gap: 14px;
+        align-items: center;
+
+        li {
+          a {
+
+            &:first-child {
+              border-left: 0;
+            }
+          }
+        }
+      }
+
+      .socialLinks {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        color: #fff;
+        border: 0;
+
+      }
+    }
+
+    .right {
+      ul {
+        display: flex;
+        // gap: 14px;
+        align-items: center;
+
+        li {
+          a {
+
+            &:last-child {
+              border-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .filterProducts {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .left {
+      .logo {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        gap: 10px;
+
+        h2 {
+          font-size: 26px;
+          font-weight: 300;
+
+          span {
+            font-weight: 900;
+          }
+        }
+      }
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      gap: 10px;
+
+      .input {
+        input {
+          width: 100%;
+          border: 0;
+          outline: 0;
+          padding: 13px 12px;
+          border-radius: 3px;
+        }
+
+        position: relative;
+
+
+        .searchbutton {
+          position: absolute;
+          padding: 10px 22px;
+          background-color: #ff5722;
+
+          border: 0;
+          outline: 0;
+          right: 4px;
+          top: 4px;
+          bottom: 4px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+
+        }
+
+        .searchIcone {
+          font-size: 26px;
+
+        }
+      }
+
+
+      .categories {
+        ul {
+          display: flex;
+          white-space: nowrap;
+          justify-content: space-between;
+
+          li {
+            a {
+              color: #fff;
+
+            }
+          }
+        }
+      }
+
+    }
+
+    .right {
+      .cart {
+        color: #fff;
+
+        .cartIcone {
+          font-size: 30px;
+
+        }
+      }
+    }
+  }
+}
