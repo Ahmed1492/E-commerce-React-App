@@ -1,8 +1,9 @@
 import { Navbar } from './Component/navbar/Navbar.jsx';
-import { SingleCategory } from './Component/singleCategory/SingleCategory.jsx';
-import { SingleProduct } from './Component/singleProduct/SingleProduct.jsx';
-import { HomePage } from './pages/HomePage.jsx';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { SingleProduct } from './pages/singleProduct/SingleProduct.jsx';
+import { SingleCategory } from './pages/singleCategory/SingleCategory.jsx';
+import { HomePage } from './pages/HomePage/HomePage.jsx';
 
 const getSingleCategory = 'https://dummyjson.com/products/category/';
 const getSingleProduct = 'https://dummyjson.com/products/';

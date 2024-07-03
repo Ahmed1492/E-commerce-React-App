@@ -1,28 +1,26 @@
-import { useEffect, useState } from "react";
-import "./Laptops.scss";
+import { Link, useParams } from "react-router-dom";
+import "./SingleCategory.scss";
 import axios from "axios";
-import { Link } from "react-router-dom";
- 
-export const Laptops = () => {
-  const [allProducts, setAllProducts] = useState([]);
-  const shuffleArray = (array) => {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
-    }
-    return array;
-  };
-  const getAllProducts = async () => {
-    try {
-      let myResponse = await axios.get(
-        "https://dummyjson.com/products/category/laptops"
-      );
-      let allProducts = myResponse?.data.products;
-      let shuffleProducts = shuffleArray(allProducts);
-      let randomFiveElement = shuffleProducts.splice(0, 5);
-      setAllProducts(randomFiveElement);
+import { useEffect, useState } from "react";
+import { TitleOfCategories } from "../../Component/titleOfCategories/TitleOfCategories";
 
-      // console.log(randomFiveElement);
+export const SingleCategory = ({ url }) => {
+  const param = useParams();
+  const [allProducts, setAllProducts] = useState([]);
+  let categoryNameURL = param.name;
+  let categoryName = param.name;
+
+  let formattedCategory = categoryName.replace(/-/g, " ");
+
+  formattedCategory = formattedCategory.replace(/\b\w/g, (match) =>
+    match.toUpperCase()
+  );
+  // console.log(formattedCategory); // Outputs: "Home Decoration"
+
+  const getCategroy = async () => {
+    try {
+      let myResponse = await axios.get(url + categoryNameURL);
+      setAllProducts(myResponse.data.products);
     } catch (error) {
       console.log(error);
     }
@@ -32,10 +30,12 @@ export const Laptops = () => {
     return parseFloat(num.toFixed(2));
   }
   useEffect(() => {
-    getAllProducts();
-  }, []);
+    getCategroy();
+  }, [param]);
   return (
-    <div className="laptops">
+    <div className="allProductCategory">
+      <TitleOfCategories title={`SEE OUR ${formattedCategory}`} />
+
       <div className="allCards spaceX">
         {allProducts?.map((singleProduct, index) => (
           <Link
