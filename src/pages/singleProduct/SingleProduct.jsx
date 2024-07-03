@@ -65,7 +65,7 @@ export const SingleProduct = ({ url }) => {
                   {allProducts.discountPercentage}% OFF
                 </p>
               </div>
-            </div> 
+            </div>
             <div className="quantityOfProduct">
               <p>Quantity: </p>
               <div className="settingsOfNumber">
