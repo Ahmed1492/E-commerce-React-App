@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import "./AllCategoryProducts.scss";
 import axios from "axios";
+import "./SmartPhones.scss";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-export const AllCategoryProducts = () => {
+
+export const SmartPhones = () => {
   const [allProducts, setAllProducts] = useState([]);
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -14,23 +15,34 @@ export const AllCategoryProducts = () => {
 
   const getAllProducts = async () => {
     try {
-      let myResponse = await axios.get("https://dummyjson.com/products");
+      let myResponse = await axios.get(
+        "https://dummyjson.com/products/category/smartphones"
+      );
       let allProducts = myResponse.data.products;
+
+      // Shuffle the products array
       let shuffledProducts = shuffleArray(allProducts); // Shuffle a copy of the array
-      setAllProducts(shuffledProducts);
+
+      // Take the first 5 elements of the shuffled array
+      let randomFiveProducts = shuffledProducts.slice(0, 5);
+
+      // Set the random five products in the state
+      setAllProducts(randomFiveProducts);
     } catch (error) {
       console.log(error);
     }
   };
+
   function truncateToTwoDecimals(num) {
     return parseFloat(num.toFixed(2));
   }
+
   useEffect(() => {
     getAllProducts();
+    // console.log(allProducts);
   }, []);
-
   return (
-    <div className="allCategories">
+    <div className="smartPhones">
       <div className="allCards spaceX">
         {allProducts?.map((singleProduct, index) => (
           <Link
@@ -47,7 +59,7 @@ export const AllCategoryProducts = () => {
             </div>
             <div className="desc">
               <p>
-                Brand:{" "}
+                Brand:
                 {singleProduct.brand ? (
                   <span className="brandName">{singleProduct.brand}</span>
                 ) : (

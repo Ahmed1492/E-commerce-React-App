@@ -5,12 +5,30 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
+import axios from "axios";
+import { useEffect, useState } from "react";
 export const Navbar = () => {
+  const [myCategoreis, setMyCategories] = useState([]);
+  const getCategories = async () => {
+    try {
+      let myResponse = await axios.get(
+        "https://dummyjson.com/products/category-list"
+      );
+      let categories = myResponse.data;
+      let getSomeCategory = categories.splice(0, 9);
+      setMyCategories(getSomeCategory);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getCategories();
+  });
   return (
     <div className="navbar spaceX">
       <div className=" links ">
         <div className="left">
-          <ul >
+          <ul>
             <li>
               <Link>Seller Center</Link>
             </li>
@@ -44,9 +62,9 @@ export const Navbar = () => {
         <div className="left">
           <div className="logo">
             <MenuIcon />
-            <h2>
+            <Link to="/">
               <span>Snap</span>Up.
-            </h2>
+            </Link>
           </div>
         </div>
         <div className="center">
@@ -58,30 +76,19 @@ export const Navbar = () => {
           </div>
           <div className="categories">
             <ul>
-              <li>
-                <Link>Smart Phone</Link>
-              </li>
-              <li>
-                <Link>Labtop</Link>
-              </li>
-              <li>
-                <Link>fragrances</Link>
-              </li>
-              <li>
-                <Link>home-decoration</Link>
-              </li>
-              <li>
-                <Link>mens-shoes</Link>
-              </li>
-              <li>
-                <Link>mobile-accessories</Link>
-              </li>
-              <li>
-                <Link>womens-dresses</Link>
-              </li>
-              <li>
-                <Link>sunglasses</Link>
-              </li>
+              {myCategoreis.map((category, index) => {
+                let categoryName = category;
+                let formattedCategory = categoryName.replace(/-/g, " ");
+                formattedCategory = formattedCategory.replace(
+                  /\b\w/g,
+                  (match) => match.toUpperCase()
+                );
+                return (
+                  <li key={index}>
+                    <Link to={`category/${category}`}>{formattedCategory}</Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </div>

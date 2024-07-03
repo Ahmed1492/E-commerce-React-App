@@ -1,23 +1,28 @@
-import { useEffect, useState } from "react";
-import "./AllCategoryProducts.scss";
 import axios from "axios";
+import "./Fragrances.scss";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-export const AllCategoryProducts = () => {
+
+export const Fragrances = () => {
   const [allProducts, setAllProducts] = useState([]);
+
   const shuffleArray = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
   };
-
   const getAllProducts = async () => {
     try {
-      let myResponse = await axios.get("https://dummyjson.com/products");
+      let myResponse = await axios.get(
+        "https://dummyjson.com/products/category/fragrances"
+      );
       let allProducts = myResponse.data.products;
-      let shuffledProducts = shuffleArray(allProducts); // Shuffle a copy of the array
-      setAllProducts(shuffledProducts);
+      let shuffleProducts = shuffleArray(allProducts);
+      let randomFiveProducts = shuffleProducts.splice(0, 5);
+      setAllProducts(randomFiveProducts);
+      // console.log(randomFiveProducts);
     } catch (error) {
       console.log(error);
     }
@@ -28,9 +33,8 @@ export const AllCategoryProducts = () => {
   useEffect(() => {
     getAllProducts();
   }, []);
-
   return (
-    <div className="allCategories">
+    <div className="fragrances">
       <div className="allCards spaceX">
         {allProducts?.map((singleProduct, index) => (
           <Link
@@ -47,7 +51,7 @@ export const AllCategoryProducts = () => {
             </div>
             <div className="desc">
               <p>
-                Brand:{" "}
+                Brand:
                 {singleProduct.brand ? (
                   <span className="brandName">{singleProduct.brand}</span>
                 ) : (

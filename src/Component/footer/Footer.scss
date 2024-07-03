@@ -1,0 +1,28 @@
+.footer {
+  padding: 20px;
+  background-color: #ff5722;
+  color: #e2e2e2ed;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  font-size: 20px;
+  font-weight: 300;
+
+  .top {
+    display: flex;
+    gap: 15px;
+    line-height: 37px;
+
+    p {}
+
+    p:nth-child(2) {
+      border-left: 2px solid;
+      border-right: 2px solid;
+      padding: 0 20px;
+
+    }
+  }
+}

@@ -77,9 +77,10 @@
         color: #fff;
         gap: 10px;
 
-        h2 {
+        a {
           font-size: 26px;
           font-weight: 300;
+          color: #fff;
 
           span {
             font-weight: 900;
@@ -136,11 +137,15 @@
           display: flex;
           white-space: nowrap;
           justify-content: space-between;
+          padding-top: 3px;
+          padding-bottom: 3px;
 
           li {
             a {
               color: #fff;
-
+              font-size: 19px;
+              font-weight: 300;
+             
             }
           }
         }
