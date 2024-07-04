@@ -7,13 +7,15 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export const SingleProduct = ({ url }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [productQuantity, setProductQuantity] = useState(1);
+  const [mainImage, setMainImage] = useState("");
   const param = useParams();
   const id = param.id;
   const getSingleProduct = async () => {
     try {
       let myRespone = await axios.get(url + id);
       setAllProducts(myRespone.data);
-      console.log(allProducts);
+      setMainImage(myRespone.data.images);
+      console.log(mainImage);
     } catch (error) {
       console.log(error);
     }
@@ -26,6 +28,11 @@ export const SingleProduct = ({ url }) => {
     productQuantity !== 1 && setProductQuantity(productQuantity - 1);
   };
 
+  const handleImageChange = (imgSrc) => {
+    setMainImage([imgSrc]);
+    console.log(mainImage);
+    // console.log(imgSrc);
+  };
   function truncateToTwoDecimals(num) {
     return parseFloat(num.toFixed(2));
   }
@@ -37,10 +44,22 @@ export const SingleProduct = ({ url }) => {
       <div className="spaceX">
         <div className="product">
           <div className="images">
-            {allProducts?.images?.length > 1 ? (
-              <img src={allProducts.images[0]} alt="" />
-            ) : (
-              <img src={allProducts.images} alt="" />
+            <div className="mainImage">
+              <img src={mainImage[0]} alt="" />
+            </div>
+            {allProducts?.images?.length > 1 && (
+              <div className="smallImages">
+                {allProducts.images.map((imageSrc, index) => {
+                  return (
+                    <img
+                      onClick={() => handleImageChange(imageSrc)}
+                      key={index}
+                      src={imageSrc}
+                      alt=""
+                    />
+                  );
+                })}
+              </div>
             )}
           </div>
           <div className="descriptions">

@@ -11,7 +11,7 @@ export const LeftMenue = ({ setIsOpenedMenue, isOpenedMenue }) => {
         "https://dummyjson.com/products/category-list"
       );
       setAllCategories(myResponse.data);
-      console.log(myResponse.data);
+      // console.log(myResponse.data);
     } catch (error) {
       console.log(error);
     }
