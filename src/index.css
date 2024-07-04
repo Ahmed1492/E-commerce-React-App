@@ -17,3 +17,7 @@ a {
 body {
   background-color: #e2e2e208;
 }
+
+button {
+  cursor: pointer;
+}

@@ -6,6 +6,7 @@ import { Footer } from "../../Component/footer/Footer";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export const SingleProduct = ({ url }) => {
   const [allProducts, setAllProducts] = useState([]);
+  const [productQuantity, setProductQuantity] = useState(1);
   const param = useParams();
   const id = param.id;
   const getSingleProduct = async () => {
@@ -16,6 +17,13 @@ export const SingleProduct = ({ url }) => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const increaseQuantity = () => {
+    productQuantity < 40 && setProductQuantity(productQuantity + 1);
+  };
+  const decreaseQuantity = () => {
+    productQuantity !== 1 && setProductQuantity(productQuantity - 1);
   };
 
   function truncateToTwoDecimals(num) {
@@ -69,9 +77,9 @@ export const SingleProduct = ({ url }) => {
             <div className="quantityOfProduct">
               <p>Quantity: </p>
               <div className="settingsOfNumber">
-                <button>-</button>
-                <span className="totlaNumberOfProduct">1</span>
-                <button>+</button>
+                <button onClick={decreaseQuantity}>-</button>
+                <span className="totlaNumberOfProduct">{productQuantity}</span>
+                <button onClick={increaseQuantity}>+</button>
               </div>
             </div>
             <div className="buyProduct">

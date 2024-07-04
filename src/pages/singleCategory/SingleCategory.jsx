@@ -9,7 +9,6 @@ export const SingleCategory = ({ url }) => {
   const [allProducts, setAllProducts] = useState([]);
   let categoryNameURL = param.name;
   let categoryName = param.name;
-
   let formattedCategory = categoryName.replace(/-/g, " ");
 
   formattedCategory = formattedCategory.replace(/\b\w/g, (match) =>
@@ -20,7 +19,7 @@ export const SingleCategory = ({ url }) => {
   const getCategroy = async () => {
     try {
       let myResponse = await axios.get(url + categoryNameURL);
-      setAllProducts(myResponse.data.products);
+      await setAllProducts(myResponse.data.products);
     } catch (error) {
       console.log(error);
     }
@@ -31,7 +30,7 @@ export const SingleCategory = ({ url }) => {
   }
   useEffect(() => {
     getCategroy();
-  }, [param]);
+  }, [categoryName, param]);
   return (
     <div className="allProductCategory">
       <TitleOfCategories title={`SEE OUR ${formattedCategory}`} />

@@ -7,8 +7,10 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { LeftMenue } from "../leftMenue/LeftMenue";
 export const Navbar = () => {
   const [myCategoreis, setMyCategories] = useState([]);
+  const [isOpenedMenue, setIsOpenedMenue] = useState(false);
   const getCategories = async () => {
     try {
       let myResponse = await axios.get(
@@ -24,8 +26,13 @@ export const Navbar = () => {
   useEffect(() => {
     getCategories();
   });
+
   return (
     <div className="navbar spaceX">
+      <LeftMenue
+        isOpenedMenue={isOpenedMenue}
+        setIsOpenedMenue={setIsOpenedMenue}
+      />
       <div className=" links ">
         <div className="left">
           <ul>
@@ -61,7 +68,9 @@ export const Navbar = () => {
       <div className="filterProducts">
         <div className="left">
           <div className="logo">
-            <MenuIcon />
+            <button onClick={() => setIsOpenedMenue(true)}>
+              <MenuIcon />
+            </button>
             <Link to="/">
               <span>Snap</span>Up.
             </Link>
