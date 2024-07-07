@@ -4,6 +4,9 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Footer } from "../../Component/footer/Footer";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/cartReducer";
+import { Cart } from "../cart/Cart";
 export const SingleProduct = ({ url }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [productQuantity, setProductQuantity] = useState(1);
@@ -15,7 +18,7 @@ export const SingleProduct = ({ url }) => {
       let myRespone = await axios.get(url + id);
       setAllProducts(myRespone.data);
       setMainImage(myRespone.data.images);
-      console.log(mainImage);
+      // console.log(mainImage);
     } catch (error) {
       console.log(error);
     }
@@ -30,15 +33,20 @@ export const SingleProduct = ({ url }) => {
 
   const handleImageChange = (imgSrc) => {
     setMainImage([imgSrc]);
-    console.log(mainImage);
+    // console.log(mainImage);
     // console.log(imgSrc);
   };
   function truncateToTwoDecimals(num) {
     return parseFloat(num.toFixed(2));
   }
+
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state?.cart?.products);
   useEffect(() => {
     getSingleProduct();
-  }, []);
+    console.log(products);
+  }, [productQuantity]);
+
   return (
     <div className="singleProductDetails">
       <div className="spaceX">
@@ -102,7 +110,21 @@ export const SingleProduct = ({ url }) => {
               </div>
             </div>
             <div className="buyProduct">
-              <button className="addToCart">
+              <button
+                onClick={() =>
+                  dispatch(
+                    addToCart({
+                      id: allProducts?.id,
+                      title: allProducts?.title,
+                      desc: allProducts?.description,
+                      image: allProducts?.images[0],
+                      price: allProducts?.price,
+                      quantity: productQuantity,
+                    })
+                  )
+                }
+                className="addToCart"
+              >
                 <span className="cartIcone">
                   <ShoppingCartIcon />
                 </span>
@@ -113,6 +135,7 @@ export const SingleProduct = ({ url }) => {
           </div>
         </div>
       </div>
+      {/* <Cart /> */}
       <Footer />
     </div>
   );

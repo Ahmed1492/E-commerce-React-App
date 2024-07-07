@@ -163,7 +163,13 @@
 
     .right {
       .cart {
-        color: #fff;
+        button {
+          color: #fff;
+          background-color: transparent;
+          border: 0;
+          outline: 0;
+
+        }
 
         .cartIcone {
           font-size: 30px;

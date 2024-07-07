@@ -8,9 +8,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { LeftMenue } from "../leftMenue/LeftMenue";
+import { ProductsBasket } from "../productsBasket/ProductsBasket";
 export const Navbar = () => {
   const [myCategoreis, setMyCategories] = useState([]);
   const [isOpenedMenue, setIsOpenedMenue] = useState(false);
+  const [isOpenedCartProducts, setIsOpenedCartProducts] = useState(false);
   const getCategories = async () => {
     try {
       let myResponse = await axios.get(
@@ -33,6 +35,7 @@ export const Navbar = () => {
         isOpenedMenue={isOpenedMenue}
         setIsOpenedMenue={setIsOpenedMenue}
       />
+      {isOpenedCartProducts && <ProductsBasket />}
       <div className=" links ">
         <div className="left">
           <ul>
@@ -103,7 +106,11 @@ export const Navbar = () => {
         </div>
         <div className="right">
           <div className="cart">
-            <ShoppingCartIcon className="cartIcone" />
+            <button
+              onClick={() => setIsOpenedCartProducts(!isOpenedCartProducts)}
+            >
+              <ShoppingCartIcon className="cartIcone" />
+            </button>
           </div>
         </div>
       </div>
