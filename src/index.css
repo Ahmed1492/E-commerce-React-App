@@ -23,3 +23,12 @@ body {
 button {
   cursor: pointer;
 }
+
+/* Media Query */
+
+@media screen and (max-width: 1184px) {
+  .spaceX {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}

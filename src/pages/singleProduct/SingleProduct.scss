@@ -13,7 +13,7 @@
 
 
     .images {
-      width: 40%;
+      width: 45%;
 
       .mainImage {
 
@@ -45,6 +45,8 @@
     }
 
     .descriptions {
+      width: 64%;
+
       .title {
         font-size: 23px;
         font-weight: 600;
@@ -211,6 +213,12 @@
           gap: 10px;
           // border-radius: 0;
           border: 1px solid #b75959;
+          transition: all .6s;
+
+          &:hover {
+            background-color: #ee3900;
+            color: #fff;
+          }
         }
 
         .cartIcone {

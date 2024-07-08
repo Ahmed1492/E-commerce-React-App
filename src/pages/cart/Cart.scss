@@ -22,7 +22,7 @@
       text-align: center;
       padding: 20px;
       background-color: #fff;
-      border-bottom: 1px solid rgb(202, 177, 177);
+      border-bottom: 1px solid rgb(238 238 238);
       font-size: 20px;
       font-weight: 400;
 
@@ -31,7 +31,7 @@
     th {
       padding: 20px;
       background-color: #fff;
-      border-bottom: 22px solid #f1e3e34f;
+      border-bottom: 48px solid #f1e3e34f;
       border-collapse: collapse;
       font-size: 24px;
 
@@ -47,22 +47,29 @@
 
 .deleteFromCart {
   border: 0;
-  background-color: #fff;
   outline: 0;
-  color: red;
   font-size: 21px;
   font-weight: 400;
   border: 1px solid #dadada;
-  padding: 7px 17px;
+  padding: 10px 20px;
   border-radius: 5px;
+  color: red;
+  transition: all .5s;
+  background-color: #fff;
+
+  &:hover {
+    background-color: #ff5722;
+    color: #fff;
+
+
+  }
 }
 
 .totalBox {
   background-color: #fff;
-  padding: 9px;
+  padding: 5px 30px 26px 30px;
   margin-top: 4rem;
-  // box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-  // border-top: 22px solid rgb(226 226 226 / 89%);
+  border-radius: 12px;
 }
 
 .finalTotal {
@@ -82,12 +89,46 @@
   }
 }
 
-.cx {
-  text-align: right;
+
+
+.CheckOut {
+  font-size: 21px;
+  font-weight: 400;
+  border: 1px solid #dadada;
+  padding: 10px 12px;
+  // border-radius: 15px;
+  background-color: #fff;
+  border-radius: 0;
+  color: ff5722;
+
+  &:hover {
+    background-color: #ff5722;
+    color: #fff;
+  }
 }
 
-.sss {
+.clearCash {
+  font-size: 21px;
+  font-weight: 400;
+  border: 1px solid #dadada;
+  padding: 10px 12px;
+  border-radius: 2px;
+  background-color: #fff;
+  color: red;
+  transition: all .7s;
+
+  &:hover {
+    color: #fff;
+    background-color: red;
+  }
+}
+
+.top {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.bottom {
+  text-align: right;
 }

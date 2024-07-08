@@ -72,6 +72,13 @@
           font-size: 20px;
           font-weight: 300;
           line-height: 36px;
+          transition: all .3s;
+
+          &:hover {
+            margin-left: 10px;
+            color: #ff5722;
+            font-weight: 500;
+          }
         }
       }
 

@@ -48,95 +48,101 @@ export const SingleProduct = ({ url }) => {
   }, [productQuantity]);
 
   return (
-    <div className="singleProductDetails">
-      <div className="spaceX">
-        <div className="product">
-          <div className="images">
-            <div className="mainImage">
-              <img src={mainImage[0]} alt="" />
-            </div>
-            {allProducts?.images?.length > 1 && (
-              <div className="smallImages">
-                {allProducts.images.map((imageSrc, index) => {
-                  return (
-                    <img
-                      onClick={() => handleImageChange(imageSrc)}
-                      key={index}
-                      src={imageSrc}
-                      alt=""
-                    />
-                  );
-                })}
+    allProducts.length !== 0 && (
+      <div className="singleProductDetails">
+        <div className="spaceX">
+          <div className="product">
+            <div className="images">
+              <div className="mainImage">
+                <img src={mainImage[0]} alt="" />
               </div>
-            )}
-          </div>
-          <div className="descriptions">
-            <p className="title">{allProducts.title}</p>
-            <p className="desc">{allProducts.description}</p>
-            <div className="desc">
-              <p>
-                <span className="firstSpan">Rating</span>: {allProducts.rating}
-              </p>
-              <p>
-                <span>Brand</span>:{" "}
-                {allProducts.Brand ? allProducts.Brand : "No Brand"}
-              </p>
-              <p>
-                <span>Category</span>: {allProducts.category}
-              </p>
+              {allProducts?.images?.length > 1 && (
+                <div className="smallImages">
+                  {allProducts.images.map((imageSrc, index) => {
+                    return (
+                      <img
+                        onClick={() => handleImageChange(imageSrc)}
+                        key={index}
+                        src={imageSrc}
+                        alt=""
+                      />
+                    );
+                  })}
+                </div>
+              )}
             </div>
-            <div className="price">
-              <del className="priceBrforeDesc">${allProducts.price}</del>
-              <span className="taxes">(inclusive of all taxes)</span>
-              <div className="disc">
-                <p className="priceWithDesc">
-                  $
-                  {truncateToTwoDecimals(
-                    allProducts.price -
-                      (allProducts.discountPercentage * allProducts.price) / 100
-                  )}
+            <div className="descriptions">
+              <p className="title">{allProducts.title}</p>
+              <p className="desc">{allProducts.description}</p>
+              <div className="desc">
+                <p>
+                  <span className="firstSpan">Rating</span>:{" "}
+                  {allProducts.rating}
                 </p>
-                <p className="discount">
-                  {allProducts.discountPercentage}% OFF
+                <p>
+                  <span>Brand</span>:{" "}
+                  {allProducts.Brand ? allProducts.Brand : "No Brand"}
+                </p>
+                <p>
+                  <span>Category</span>: {allProducts.category}
                 </p>
               </div>
-            </div>
-            <div className="quantityOfProduct">
-              <p>Quantity: </p>
-              <div className="settingsOfNumber">
-                <button onClick={decreaseQuantity}>-</button>
-                <span className="totlaNumberOfProduct">{productQuantity}</span>
-                <button onClick={increaseQuantity}>+</button>
+              <div className="price">
+                <del className="priceBrforeDesc">${allProducts.price}</del>
+                <span className="taxes">(inclusive of all taxes)</span>
+                <div className="disc">
+                  <p className="priceWithDesc">
+                    $
+                    {truncateToTwoDecimals(
+                      allProducts.price -
+                        (allProducts.discountPercentage * allProducts.price) /
+                          100
+                    )}
+                  </p>
+                  <p className="discount">
+                    {allProducts.discountPercentage}% OFF
+                  </p>
+                </div>
               </div>
-            </div>
-            <div className="buyProduct">
-              <button
-                onClick={() =>
-                  dispatch(
-                    addToCart({
-                      id: allProducts?.id,
-                      title: allProducts?.title,
-                      desc: allProducts?.description,
-                      image: allProducts?.images[0],
-                      price: allProducts?.price,
-                      quantity: productQuantity,
-                    })
-                  )
-                }
-                className="addToCart"
-              >
-                <span className="cartIcone">
-                  <ShoppingCartIcon />
-                </span>
-                Add To Cart
-              </button>
-              <button className="buyNow">Buy Now</button>
+              <div className="quantityOfProduct">
+                <p>Quantity: </p>
+                <div className="settingsOfNumber">
+                  <button onClick={decreaseQuantity}>-</button>
+                  <span className="totlaNumberOfProduct">
+                    {productQuantity}
+                  </span>
+                  <button onClick={increaseQuantity}>+</button>
+                </div>
+              </div>
+              <div className="buyProduct">
+                <button
+                  onClick={() =>
+                    dispatch(
+                      addToCart({
+                        id: allProducts?.id,
+                        title: allProducts?.title,
+                        desc: allProducts?.description,
+                        image: allProducts?.images[0],
+                        price: allProducts?.price,
+                        quantity: productQuantity,
+                      })
+                    )
+                  }
+                  className="addToCart"
+                >
+                  <span className="cartIcone">
+                    <ShoppingCartIcon />
+                  </span>
+                  Add To Cart
+                </button>
+                <button className="buyNow">Buy Now</button>
+              </div>
             </div>
           </div>
         </div>
+        {/* <Cart /> */}
+        <Footer />
       </div>
-      {/* <Cart /> */}
-      <Footer />
-    </div>
+    )
   );
 };

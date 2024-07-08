@@ -9,25 +9,37 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { LeftMenue } from "../leftMenue/LeftMenue";
 import { ProductsBasket } from "../productsBasket/ProductsBasket";
+import { useSelector } from "react-redux";
 export const Navbar = () => {
   const [myCategoreis, setMyCategories] = useState([]);
   const [isOpenedMenue, setIsOpenedMenue] = useState(false);
   const [isOpenedCartProducts, setIsOpenedCartProducts] = useState(false);
+  const [numberOfLinksInEachScreen, setNumberOfLinksInEachScreen] = useState(9);
+  const handleNumberOfLinksInEachScreen = () => {
+    if (window.screen.width <= 1486) {
+      setNumberOfLinksInEachScreen(7);
+    }
+  };
   const getCategories = async () => {
     try {
       let myResponse = await axios.get(
         "https://dummyjson.com/products/category-list"
       );
       let categories = myResponse.data;
-      let getSomeCategory = categories.splice(0, 9);
+      let getSomeCategory = categories.splice(0, numberOfLinksInEachScreen);
       setMyCategories(getSomeCategory);
     } catch (error) {
       console.log(error);
     }
   };
+
+  const products = useSelector((state) => state?.cart?.products);
+
   useEffect(() => {
     getCategories();
-  });
+    handleNumberOfLinksInEachScreen();
+    console.log(numberOfLinksInEachScreen);
+  }, []);
 
   return (
     <div className="navbar spaceX">
@@ -111,6 +123,7 @@ export const Navbar = () => {
             >
               <ShoppingCartIcon className="cartIcone" />
             </button>
+            <div className="numberOfProducts">{products.length}</div>
           </div>
         </div>
       </div>

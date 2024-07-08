@@ -11,7 +11,7 @@ export const AllCategoryProducts = () => {
     }
     return array;
   };
-
+  console.log();
   const getAllProducts = async () => {
     try {
       let myResponse = await axios.get("https://dummyjson.com/products");
