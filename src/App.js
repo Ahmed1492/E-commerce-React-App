@@ -1,6 +1,6 @@
 import { Navbar } from './Component/navbar/Navbar.jsx';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, HashRouter } from 'react-router-dom';
 import { SingleProduct } from './pages/singleProduct/SingleProduct.jsx';
 import { SingleCategory } from './pages/singleCategory/SingleCategory.jsx';
 import { HomePage } from './pages/HomePage/HomePage.jsx';
@@ -11,7 +11,7 @@ const getSingleProduct = 'https://dummyjson.com/products/';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Navbar />
         <Routes>
           <Route path='/' element={<HomePage />} />
@@ -20,7 +20,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
 
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
