@@ -1,6 +1,5 @@
 # ECommerce App
 
-This is a simple eCommerce application built using React and Sass. The app allows users to view products, filter by category (men's, women's, and beauty), and view single product details.
 
 ## Features
 
