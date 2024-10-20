@@ -15,14 +15,43 @@
     display: flex;
     gap: 15px;
     line-height: 37px;
+    flex-wrap: wrap;
 
-    p {}
+    p {
+      white-space: nowrap;
+    }
 
     p:nth-child(2) {
       border-left: 2px solid;
       border-right: 2px solid;
       padding: 0 20px;
 
+    }
+  }
+}
+
+@media screen and (max-width: 596px) {
+  .footer {
+    .top {
+      flex-direction: column;
+
+      p {
+        border: 0 !important;
+      }
+    }
+
+
+  }
+}
+
+@media screen and (max-width: 396px) {
+  .footer {
+    .top {
+      flex-direction: column;
+    }
+
+    .bottom {
+      text-align: center !important;
     }
   }
 }

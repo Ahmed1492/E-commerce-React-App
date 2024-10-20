@@ -298,6 +298,10 @@
     justify-content: center !important;
     align-items: center !important;
     gap: 20px !important;
+
+    a {
+      border: 0 !important;
+    }
   }
 
   .filterProducts {
@@ -307,6 +311,10 @@
     flex-direction: column !important;
     align-items: flex-start !important;
     margin: 10px 0 !important;
+
+    .left {
+      margin: auto;
+    }
   }
 
   .leftMenue {
@@ -322,6 +330,7 @@
       flex-wrap: wrap !important;
       justify-content: center !important;
       align-items: center !important;
+      flex-direction: column !important;
 
       li {
         padding: 20px;

@@ -398,6 +398,13 @@
 
 
 @media screen and (max-width: 442px) {
+
+
+  .allCategories .allCards .singleCard img {
+    margin-left: -3rem !important;
+
+  }
+
   .product {
     flex-direction: column;
     justify-content: center;
