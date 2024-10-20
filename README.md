@@ -2,7 +2,7 @@
 
 
 ## Features
-
+ 
 - **Product Listing:** Displays a list of all available products.
 - **Category Filter:** Users can filter products by category (Men's, Women's, Beauty).
 - **Single Product Page:** Detailed view of a single product.
