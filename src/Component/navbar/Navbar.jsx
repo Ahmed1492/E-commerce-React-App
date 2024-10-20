@@ -47,19 +47,18 @@ export const Navbar = () => {
         isOpenedMenue={isOpenedMenue}
         setIsOpenedMenue={setIsOpenedMenue}
       />
-      {isOpenedCartProducts && <ProductsBasket />}
       <div className=" links ">
         <div className="left">
           <ul>
             <li>
-              <Link>Seller Center</Link>
+              <Link className="snoWrap">Seller Center</Link>
             </li>
             <li>
               <Link>Dwonload</Link>
             </li>
             <li>
               <Link className="socialLinks">
-                <p> Follow us on</p>
+                <p className="snoWrap"> Follow us on</p>
                 <FacebookIcon />
                 <InstagramIcon />
               </Link>
@@ -125,6 +124,8 @@ export const Navbar = () => {
             </button>
             <div className="numberOfProducts">{products.length}</div>
           </div>
+
+          {isOpenedCartProducts && <ProductsBasket />}
         </div>
       </div>
     </div>

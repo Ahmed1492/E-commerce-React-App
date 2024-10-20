@@ -44,7 +44,7 @@ export const ProductsBasket = () => {
       </div>
       <div className="viewCart">
         <Link to="/cart" className="viewCartButton">
-          View My Shopping Cart
+          Shopping Cart
         </Link>
       </div>
     </div>

@@ -4,6 +4,10 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
+.snoWrap {
+  white-space: nowrap;
+}
 .spaceX {
   padding-left: 8%;
   padding-right: 8%;

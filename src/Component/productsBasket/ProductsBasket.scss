@@ -1,16 +1,18 @@
 .productsBasket {
   background-color: #fff;
-  width: 22%;
+  width: 21rem;
   position: absolute;
-  right: 12px;
-  top: 113px;
+  right: -33px;
+  top: 42px;
   z-index: 999;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  padding: 13px;
-  min-height: 58vh;
   border-radius: 5px;
-  max-height: 60vh;
   overflow-y: scroll;
+  padding-bottom: 18px;
+  padding-top: 1rem;
+  padding-left: 11px;
+  max-height: 25rem;
+
 
   &::-webkit-scrollbar {
     width: 10px;
@@ -32,7 +34,6 @@
     color: #FF5722;
     font-size: 21px;
     font-weight: 500;
-    padding-bottom: 2rem;
 
   }
 
@@ -58,7 +59,7 @@
         align-items: center;
 
         p {
-          font-size: 20px;
+          font-size: 19px;
           color: #222222a8;
           font-weight: 400;
         }
@@ -84,9 +85,9 @@
   }
 
   .viewCart {
-    // display: flex;
-    // justify-content: flex-end;
-    // justify-content: center;
+    display: flex;
+    justify-content: flex-end;
+    justify-content: center;
 
     text-align: right;
 
@@ -104,4 +105,109 @@
     }
   }
 
+}
+
+
+
+// media Query 
+
+@media screen and (max-width: 1300px) {
+  .productsBasket {
+    right: 0px !important;
+
+    .singleProduct {
+      gap: 27px;
+      margin-top: 17px;
+
+      .singleProductDetails {
+        img {}
+
+        p {
+          font-size: 17px !important;
+        }
+      }
+
+      .productPrice {
+        p {
+          font-size: 17px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1191px) {
+  .productsBasket {
+    right: 0px !important;
+
+
+  }
+}
+
+@media screen and (max-width: 467px) {
+  .productsBasket {
+    right: -157px !important;
+    top: 37px !important;
+
+
+  }
+}
+
+
+@media screen and (min-width: 453px) and (max-width: 467px) {
+  .productsBasket {
+    right: -16px !important;
+
+  }
+}
+
+@media screen and (max-width: 381px) {
+  .productsBasket {
+    width: 90vw !important;
+    right: -138px !important;
+    top: 37px !important;
+  }
+}
+
+
+
+@media screen and (max-width: 323px) {
+  .productsBasket {
+    width: 82vw !important;
+    right: -110px !important;
+    top: 37px !important;
+
+    h3 {
+      font-size: 16px;
+    }
+
+    .viewCartButton {
+      font-size: 15px !important;
+    }
+
+
+    .singleProductDetails {
+      gap: 10px !important;
+
+      img {
+        width: 74px !important;
+        height: 15vw !important;
+
+      }
+
+      p {
+        color: green !important;
+      }
+    }
+  }
+
+  .productsBasket .singleProduct .singleProductDetails p {
+    font-size: 14px !important;
+
+  }
+
+  .productsBasket .singleProduct .productPrice p {
+    font-size: 12px !important;
+
+  }
 }

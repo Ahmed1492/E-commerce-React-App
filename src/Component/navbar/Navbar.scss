@@ -1,5 +1,6 @@
 .navbar {
   background-color: #ff5722;
+  padding-top: 28px;
 
   padding-bottom: 4px;
 
@@ -47,6 +48,7 @@
     }
 
     .right {
+
       ul {
         display: flex;
         // gap: 14px;
@@ -170,6 +172,8 @@
     }
 
     .right {
+      position: relative;
+
       .cart {
         position: relative;
 
@@ -283,6 +287,7 @@
 }
 
 @media screen and (max-width: 452px) {
+
   .categories {
     display: none !important;
   }
@@ -299,6 +304,9 @@
     flex-wrap: wrap !important;
     padding: 10px;
     gap: 20px;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    margin: 10px 0 !important;
   }
 
   .leftMenue {
@@ -317,7 +325,27 @@
 
       li {
         padding: 20px;
+        white-space: nowrap;
+
+        a:first-child {
+          flex-direction: column;
+        }
       }
     }
   }
+
+  .center {
+    input {
+      font-size: 10px !important;
+
+    }
+
+    width: 90vw !important;
+
+  }
+
+  .right {
+    margin: auto;
+  }
+
 }

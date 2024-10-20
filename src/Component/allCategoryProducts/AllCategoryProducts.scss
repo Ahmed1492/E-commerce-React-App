@@ -138,7 +138,7 @@
   }
 
   .singleCard {
-    width: 44% !important;
+    width: 18rem !important;
 
 
   }
@@ -190,6 +190,21 @@
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
+
+    .desc {
+      line-height: 32px !important;
+
+      p {
+        font-size: 16px !important;
+
+      }
+    }
+
+    .categoryMark {
+      font-size: 18px !important;
+
+    }
+
   }
 
 
