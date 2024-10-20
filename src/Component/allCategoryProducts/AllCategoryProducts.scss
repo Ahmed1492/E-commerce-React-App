@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 2px;
 
     .singleCard {
       background-color: #fff;
@@ -110,7 +111,8 @@
 /*   Media Query   */
 @media screen and (max-width: 1512px) {
   .singleCard {
-    width: 20rem !important;
+    width: 19rem !important;
+    margin: 0 20px !important;
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
@@ -182,7 +184,7 @@
   }
 
   .singleCard {
-    width: 20rem !important;
+    width: 19rem !important;
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
