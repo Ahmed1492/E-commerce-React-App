@@ -29,6 +29,8 @@
         gap: 6px;
         align-items: center;
         margin-left: 30px;
+        flex-wrap: wrap;
+
 
         img {
           width: 10vw;
@@ -289,7 +291,7 @@
 
 @media screen and (max-width: 1323px) {
   .images {
-    width: 25rem !important;
+    width: 28rem !important;
   }
 
   .descriptions {

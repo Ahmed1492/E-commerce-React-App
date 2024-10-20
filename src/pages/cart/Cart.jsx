@@ -33,10 +33,12 @@ export const Cart = () => {
             {products?.map((product, index) => (
               <tr key={index}>
                 <td>{index + 1}</td>
-                <td>{product?.title}</td>
+                <td className="sWrap">{product?.title}</td>
                 <td>${product?.price}</td>
                 <td>{product?.quantity}</td>
-                <td>${product?.price * product?.quantity?.toFixed(2)}</td>
+                <td className="sWrap">
+                  ${product?.price * product?.quantity?.toFixed(2)}
+                </td>
                 <td>
                   <button
                     onClick={() => dispatch(removeItem(product.id))}
@@ -52,7 +54,10 @@ export const Cart = () => {
         <div className="totalBox">
           <div className="top">
             <div>
-              <button onClick={() => dispatch(resetCart())} className="clearCash">
+              <button
+                onClick={() => dispatch(resetCart())}
+                className="clearCash"
+              >
                 {" "}
                 Clear Cash
               </button>

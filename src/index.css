@@ -8,6 +8,9 @@
 .snoWrap {
   white-space: nowrap;
 }
+.sWrap {
+  white-space: wrap !important;
+}
 .spaceX {
   padding-left: 8%;
   padding-right: 8%;
