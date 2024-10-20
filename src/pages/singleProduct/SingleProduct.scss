@@ -13,7 +13,7 @@
 
 
     .images {
-      width: 34rem;
+      width: 33rem;
 
       .mainImage {
 
@@ -31,10 +31,14 @@
         margin-left: 30px;
         flex-wrap: wrap;
 
+        justify-content: center;
 
         img {
-          width: 10vw;
-          height: 130px;
+          height: 94px;
+          width: 7vw;
+          // width: 10vw;
+
+          // height: 130px;
           object-fit: contain;
           background-color: #f4ecec;
           padding: 8px;
@@ -245,8 +249,15 @@
 // MediaQuery 
 
 @media screen and (max-width: 1710px) {
+
   .images {
     width: 32rem !important;
+
+    .smallImages {
+      img {
+        width: 8vw !important;
+      }
+    }
   }
 
   .descriptions {
@@ -260,6 +271,12 @@
 @media screen and (max-width: 1586px) {
   .images {
     width: 30rem !important;
+
+    .smallImages {
+      img {
+        width: 9vw !important;
+      }
+    }
   }
 
   .descriptions {
