@@ -15,7 +15,7 @@
       padding: 15px 15px;
       border-radius: 12px;
       position: relative;
-      width: 19%;
+      width: 19rem;
       color: black;
 
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -110,7 +110,7 @@
 /*   Media Query   */
 @media screen and (max-width: 1512px) {
   .singleCard {
-    width: 30% !important;
+    width: 20rem !important;
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
@@ -118,8 +118,12 @@
 }
 
 @media screen and (max-width: 1110px) {
+  .allCards {
+    gap: 2rem;
+  }
+
   .singleCard {
-    width: 36% !important;
+    width: 19rem !important;
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
@@ -165,7 +169,7 @@
   }
 
   .singleCard {
-    width: 59% !important;
+    width: 20rem !important;
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
