@@ -4,12 +4,32 @@
   .slider {
 
     img {
-      width:100%;
+      width: 100%;
       object-fit: cover;
-    
+
 
     }
 
     display: flex;
   }
+}
+
+
+@media screen and (max-width: 788px) {
+  .sliderHome {
+
+    .slider {
+
+      img {
+        height: 14rem;
+
+
+
+      }
+
+    }
+  }
+
+
+
 }

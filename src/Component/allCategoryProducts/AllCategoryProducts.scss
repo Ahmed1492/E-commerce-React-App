@@ -119,10 +119,24 @@
 
 @media screen and (max-width: 1110px) {
   .singleCard {
-    width: 40% !important;
+    width: 36% !important;
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
+  }
+
+
+}
+
+@media screen and (max-width: 844px) {
+  .allCards {
+    gap: 10px;
+  }
+
+  .singleCard {
+    width: 44% !important;
+
+
   }
 
 
@@ -134,10 +148,16 @@
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
+
   }
 
 
 }
+
+
+
+
+
 
 @media screen and (max-width: 600px) {
   .allCards {
@@ -145,7 +165,7 @@
   }
 
   .singleCard {
-    width: 55% !important;
+    width: 59% !important;
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
@@ -154,13 +174,15 @@
 
 }
 
-@media screen and (max-width: 600px) {
+
+
+@media screen and (max-width: 470px) {
   .allCards {
     justify-content: center !important;
   }
 
   .singleCard {
-    width: 70% !important;
+    width: 71% !important;
     background-color: black;
     margin: auto !important;
     margin-bottom: 2rem !important;
@@ -169,7 +191,8 @@
 
 }
 
-@media screen and (max-width: 330px) {
+
+@media screen and (max-width: 390px) {
   .allCards {
     justify-content: center !important;
   }
@@ -180,6 +203,7 @@
     margin: auto !important;
     margin-bottom: 2rem !important;
   }
+  
 
 
 }
