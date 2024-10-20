@@ -28,7 +28,7 @@ https://ahmed1492.github.io/E-commerce-React-App/
     ```
 2. Navigate to the project folder:
     ```bash
-    cd your-repo-name
+    cd E-commerce-React-App
     ```
 3. Install dependencies:
     ```bash
