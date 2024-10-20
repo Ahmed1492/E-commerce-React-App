@@ -132,3 +132,243 @@
 .bottom {
   text-align: right;
 }
+
+@media screen and (max-width: 1163px) {
+  .cartTable {
+
+    table th {
+      font-size: 19px !important;
+    }
+
+    .totalBox {
+      .top {
+
+        .finalTotal {
+          p {
+
+            font-size: 20px !important;
+          }
+
+          span {
+            font-size: 37px !important;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 879px) {
+  .cartTable {
+
+    table th {
+      font-size: 16px !important;
+      border-bottom: 19px solid rgba(241, 227, 227, 0.3098039216) !important;
+    }
+
+    table td {
+      font-size: 15px !important;
+    }
+
+    .deleteFromCart,
+    .clearCash {
+      font-size: 12px !important;
+
+    }
+
+    .totalBox {
+      .top {
+
+        .finalTotal {
+          p {
+
+            font-size: 20px !important;
+          }
+
+          span {
+            font-size: 37px !important;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .cartTable {
+    table {
+      width: 95vw;
+    }
+
+    table th {
+      font-size: 13px !important;
+      padding: 7px;
+
+    }
+
+    table td {
+      font-size: 13px !important;
+      padding: 10px 6px;
+
+    }
+
+    .totalBox {
+      .top {
+
+        .finalTotal {
+          p {
+
+            font-size: 14px !important;
+          }
+
+          span {
+            font-size: 32px !important;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 455px) {
+  .cartTable {
+    table {
+      width: 95vw;
+    }
+
+    table th {
+      font-size: 13px !important;
+      padding: 7px;
+
+    }
+
+    table td {
+      font-size: 13px !important;
+      padding: 10px 6px;
+      
+
+    }
+
+    .totalBox {
+      .top {
+
+        .finalTotal {
+          p {
+
+            font-size: 14px !important;
+          }
+
+          span {
+            font-size: 32px !important;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 452px) {
+  .cartTable {
+    table {
+      width: 95vw;
+    }
+
+    table th {
+      font-size: 9px !important;
+      padding: 6px;
+
+    }
+
+    table td {
+      font-size: 9px !important;
+      padding: 6px;
+
+    }
+
+    .totalBox {
+      .top {
+
+        .finalTotal {
+          p {
+
+            font-size: 11px !important;
+          }
+
+          span {
+            font-size: 22px !important;
+
+          }
+        }
+      }
+    }
+
+
+    .deleteFromCart,
+    .clearCash {
+      font-size: 9px !important;
+      padding: 6px 10px;
+
+    }
+  }
+}
+
+
+@media screen and (max-width: 350px) {
+  .cartTable {
+    table {
+      width: 95vw;
+    }
+
+    table th {
+      font-size: 9px !important;
+      padding: 6px;
+
+    }
+
+    table td {
+      font-size: 9px !important;
+      padding: 6px;
+
+    }
+
+    .totalBox {
+      .top {
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+
+        .finalTotal {
+          p {
+
+            font-size: 11px !important;
+          }
+
+          span {
+            font-size: 22px !important;
+
+          }
+        }
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+
+    .deleteFromCart,
+    .clearCash {
+      font-size: 9px !important;
+      padding: 6px 10px;
+
+    }
+  }
+}
