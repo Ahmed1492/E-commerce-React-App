@@ -2,7 +2,7 @@
 
 
 ## Features
-
+ 
 - **Product Listing:** Displays a list of all available products.
 - **Category Filter:** Users can filter products by category (Men's, Women's, Beauty).
 - **Single Product Page:** Detailed view of a single product.
@@ -28,7 +28,7 @@ https://ahmed1492.github.io/E-commerce-React-App/
     ```
 2. Navigate to the project folder:
     ```bash
-    cd your-repo-name
+    cd E-commerce-React-App
     ```
 3. Install dependencies:
     ```bash
